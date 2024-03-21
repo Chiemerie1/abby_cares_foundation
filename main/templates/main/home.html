@@ -1,0 +1,116 @@
+{% extends 'layout/nav.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="relative">
+
+        <!-- Hero section start -->
+
+        <section class="bg-[#FFF6F0] relative before:absolute before:inset-0 before:content-[''] before:bg-[#060606] before:opacity-[10%]">
+            <div class="lg:h-[720px] xl:h-[830px]">
+                <img class="w-full h-full min-h-[360px] md:min-h-[540px] object-cover" src="{% static 'img/BG8_4955.jpg' %}" alt="hero image">
+                <div class="absolute right-0 left-0 lg:top-[110px] xl:top-[155px] top-[50%] -translate-y-1/2 lg:translate-y-0">
+                    <div class="container">
+                        <div class="grid grid-cols-12">
+                            <div class="col-span-12">
+                                <div class="lg:max-w-[500px] xl:max-w-[600px] text-center ml-auto mr-auto lg:mb-[75px]">
+                                    <span class="text-base text-white block mb-5 sm:ml-80">Abby Cares Foundation</span>
+                                    <h1 class="font-lora text-white text-[36px] sm:text-[50px] md:text-[68px] lg:text-[50px] leading-tight xl:text-4xl title sm:ml-80">
+                                        Empowering our Youth, Building stronger Families and Communities</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="explore-cities-section pt-[80px] pb-[120px] lg:py-[120px]">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                        <div class="mb-[30px] lg:mb-[60px] text-center">
+                            <span class="text-secondary text-tiny inline-block mb-2">Explore Cities</span>
+                            <h2 class="font-lora text-primary text-[24px] sm:text-[30px] xl:text-xl capitalize font-medium">Find
+                                Your
+                                Neighborhood<span class="text-secondary">.</span></h2>
+                        </div>
+                        <div class="cities-slider">
+                            <div class="swiper  -mx-[30px] -my-[60px] px-[30px] py-[60px]">
+                                <div class="swiper-wrapper">
+                                    <!-- swiper-slide start -->
+                                    <div class="swiper-slide text-center">
+                                        <div class="relative group">
+                                            <a href="agency.html" class="block">
+                                                <img src="assets/images/cities/cities1.png" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290" alt="New York">
+                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
+                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">New York</span>
+                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">36 Properties</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide text-center">
+                                        <div class="relative group">
+                                            <a href="agency.html" class="block">
+                                                <img src="assets/images/cities/cities2.png" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290" alt="Sun Francisco">
+                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
+                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">Sun Francisco</span>
+                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">18 Properties</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide text-center">
+                                        <div class="relative group">
+                                            <a href="agency.html" class="block">
+                                                <img src="assets/images/cities/cities3.png" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290" alt="Washington D.C.">
+                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
+                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">Washington D.C.</span>
+                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">27 Properties</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide text-center">
+                                        <div class="relative group">
+                                            <a href="agency.html" class="block">
+                                                <img src="assets/images/cities/cities4.png" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290" alt="New York">
+                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
+                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">New York</span>
+                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">56 Properties</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide text-center">
+                                        <div class="relative group">
+                                            <a href="agency.html" class="block">
+                                                <img src="assets/images/cities/cities2.png" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290" alt="Sun Francisco">
+                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
+                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">Sun Francisco</span>
+                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">18 Properties</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- swiper-slide end-->
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+{% endblock %}
