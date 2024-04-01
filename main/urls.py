@@ -15,6 +15,8 @@ app_name="main"
 
 urlpatterns = [
     path("", views.home, name="home"),
+     path("blogs/", views.blogs , name="blogs"),
+    path("blog_details/<int:id>", views.blog_details , name="blog_details"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
