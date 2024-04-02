@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce import models as tinymce_models
 
 # Create your models here.
 
@@ -25,7 +26,7 @@ class NewsAndUpdate(models.Model):
         upload_to="homepage_what_we_have_done"
     )
     Headline = models.CharField(max_length=30)
-    paragraph = models.TextField()
+    paragraph = tinymce_models.HTMLField()
 
     def snip(self):
         return self.paragraph[:20] + "..."
@@ -69,7 +70,8 @@ class Blog(models.Model):
         blank=False,
         upload_to="major_outreach"
     )
-    paragraph = models.TextField()
+    paragraph = tinymce_models.HTMLField()
+    writers_name = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     
     def snip(self):
