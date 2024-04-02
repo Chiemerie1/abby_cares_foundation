@@ -4,6 +4,19 @@
 
 {% block content %}
 
+{{ blog.title }}
+{{ blog.created_at }}
+{{ blog.writers_name }}
+<img src"{{ blog.image.url }}" />
+<div class="relative">
+    {% comment %} {% url 'main:blog_details' id=blog.id %} {% endcomment %}
+    <a href="properties-details.html" class="block">
+        <img src="{{ blog.image.url }}" class="w-full h-full" loading="lazy" width="370" height="266" alt="">
+    </a>
+</div>
+{{ blog.paragraph | safe }}
+
+
 
 
 {% endblock %}

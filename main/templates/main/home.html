@@ -103,15 +103,15 @@
 
                                 <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
                                     <div class="relative">
-                                        <a href="properties-details.html" class="block">
+                                        <a href="{% url 'main:blog_details' id=blog.id %}" class="block">
                                             <img src="{{ blog.image.url }}" class="w-full h-full" loading="lazy" width="370" height="266" alt="">
                                         </a>
                                     </div>
 
                                     <div class="py-[20px] px-[20px]">
-                                        <h3><a href="properties-details.html" class="font-lora leading-tight text-[22px] xl:text-[26px] text-primary font-medium">{{ blog.title}}</a></h3>
-                                        <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">{{ blog.snip | safe }}t</a></h4>
-                                        <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">by: {{ blog.writers_name }}</a></h4>
+                                        <h3><a href="{% url 'main:blog_details' id=blog.id %}" class="font-lora leading-tight text-[22px] xl:text-[26px] text-primary font-medium">{{ blog.title}}</a></h3>
+                                        <h4><a href="{% url 'main:blog_details' id=blog.id %}" class="font-light text-tiny text-secondary underline">{{ blog.snip | safe }}</a></h4>
+                                        <h4><a href="{% url 'main:blog_details' id=blog.id %}" class="font-light text-tiny text-secondary underline">by: {{ blog.writers_name }}</a></h4>
                                         <span class="font-light text-sm">{{ blog.created_at }}</span>
                                     </div>
                                 </div>

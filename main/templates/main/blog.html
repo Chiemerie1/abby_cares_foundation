@@ -29,17 +29,23 @@
 <section class="blog-section pt-[80px] lg:pt-[120px]">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[30px] gap-y-[40px]">
+            
+            {% for blog in blogs %}
+
             <div class="post-item">
                 {% comment %} {% url 'main:blog_details' id=blog.id %} {% endcomment %}
-                <a href="" class="block overflow-hidden rounded-[6px] mb-[35px]">
-                    <img class="w-full h-full" src="{% static 'img/BG8_4955.jpg' %}"" width="370" height="270" loading="lazy" alt="">
+                <a href="{% url 'main:blog_details' id=blog.id %}" class="block overflow-hidden rounded-[6px] mb-[35px]">
+                    <img class="w-full h-full" src="{{ blog.image.url }}" width="370" height="270" loading="lazy" alt="">
                 </a>
                 <div>
-                    <span class="block leading-none font-normal text-[14px] text-[#FE3D8E] mb-[5px] relative before:absolute before:left-0 before:top-1/2 -translate-y-1/2 before:bg-secondary before:content-[''] before:w-[3px] before:h-[3px] before:rounded-full pl-[10px]">James Alber on 22 December, 21</span>
-                    <h3><a href="blog-details.html" class="font-lora text-[22px] xl:text-[24px] leading-[1.285] text-primary block mb-[10px] hover:text-[#FE3D8E] transition-all font-medium">Abby's blog titles</a></h3>
-                    <p class="font-light text-[#494949] text-[16px] leading-[1.75]">Properties are most budget friendly so you have are opportunity to find are the best the best...</p>
+                    <span class="block leading-none font-normal text-[14px] text-[#FE3D8E] mb-[5px] relative before:absolute before:left-0 before:top-1/2 -translate-y-1/2 before:bg-secondary before:content-[''] before:w-[3px] before:h-[3px] before:rounded-full pl-[10px]">{{ blog.writers_name }} on {{ blog.created_at }}</span>
+                    <h3><a href="{% url 'main:blog_details' id=blog.id %}" class="font-lora text-[22px] xl:text-[24px] leading-[1.285] text-primary block mb-[10px] hover:text-[#FE3D8E] transition-all font-medium">{{ blog.title}}</a></h3>
+                    <p class="font-light text-[#494949] text-[16px] leading-[1.75]">{{ blog.snip | safe }}</p>
                 </div>
             </div>
+
+            {% endfor %}
+                
         </div>
 
         <div class="grid grid-cols-12 mt-[50px] gap-x-[30px]">
