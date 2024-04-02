@@ -10,7 +10,7 @@
 
         <section class="bg-[#FFF6F0] relative before:absolute before:inset-0 before:content-[''] before:bg-[#060606] before:opacity-[10%]">
             <div class="lg:h-[720px] xl:h-[830px]">
-                <img class="w-full h-full min-h-[360px] md:min-h-[540px] object-cover" src="{% static 'img/BG8_4955.jpg' %}" alt="hero image">
+                <img class="w-full h-full min-h-[360px] md:min-h-[540px] object-cover" src="{{ hero_image.image.url }}" alt="hero image">
                 <div class="absolute right-0 left-0 lg:top-[110px] xl:top-[155px] top-[50%] -translate-y-1/2 lg:translate-y-0">
                     <div class="container mx-auto">
                         <div class="grid grid-cols-12">
@@ -37,64 +37,22 @@
                             <h2 class="font-lora text-primary text-[24px] sm:text-[30px] xl:text-xl capitalize font-medium">See what we have done with what we have<span class="text-secondary">.</span></h2>
                         </div>
                         <div class="cities-slider">
-                            <div class="swiper  -mx-[30px] -my-[60px] px-[30px] py-[60px]">
+                            <div class="swiper -mx-[30px] -my-[60px] px-[30px] py-[60px]">
                                 <div class="swiper-wrapper">
                                     <!-- swiper-slide start -->
+                                    {% for news in news_and_update %}
                                     <div class="swiper-slide text-center">
                                         <div class="relative group">
                                             <a href="agency.html" class="block">
-                                                <img src="{% static 'img/BG8_4921.jpg' %}" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290">
+                                                <img src="{{ news.image.url }}" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290">
                                                 <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
-                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">New York</span>
-                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">36 Properties</p>
+                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">{{ news.Headline }}</span>
+                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">{{ news.snip | safe }}</p>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide text-center">
-                                        <div class="relative group">
-                                            <a href="agency.html" class="block">
-                                                <img src="{% static 'img/BG8_5996.jpg' %}" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290">
-                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
-                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">Sun Francisco</span>
-                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">18 Properties</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide text-center">
-                                        <div class="relative group">
-                                            <a href="agency.html" class="block">
-                                                <img src="{% static 'img/BG8_4820.jpg' %}" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290">
-                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
-                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">Washington D.C.</span>
-                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">27 Properties</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide text-center">
-                                        <div class="relative group">
-                                            <a href="agency.html" class="block">
-                                                <img src="{% static 'img/BG8_4908.jpg' %}" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290">
-                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
-                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">New York</span>
-                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">56 Properties</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide text-center">
-                                        <div class="relative group">
-                                            <a href="agency.html" class="block">
-                                                <img src="{% static 'img/BG8_5996.jpg' %}" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290">
-                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
-                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">Sun Francisco</span>
-                                                    <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">18 Properties</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
 
                                     <!-- swiper-slide end-->
                                 </div>
@@ -110,20 +68,20 @@
         <section class="py-6 px-4 sm:p-6 md:py-10 md:px-8 border border-t-2 bg-[#1E1E1E]">
             <div class="max-w-4xl mx-auto grid grid-cols-1 lg:max-w-5xl lg:gap-x-20 lg:grid-cols-2">
               <div class="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
-                <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Major outreach in Ezza South</h1>
+                <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">{{ major_outreach.title }}</h1>
                 <p class="text-sm leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400">Abby cares Foundation</p>
               </div>
               <div class="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
-                <img src="{% static 'img/BG8_6027.jpg' %}" alt="" class="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy">
-                <img src="{% static 'img/BG8_6081.jpg' %}" alt="" class="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy">
-                <img src="{% static 'img/BG8_5807.jpg' %}" alt="" class="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy">
+                <img src="{{ major_outreach.right_image.url }}" alt="" class="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy">
+                <img src="{{ major_outreach.top_image.url }}" alt="" class="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy">
+                <img src="{{ major_outreach.left_image.url }}" alt="" class="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy">
               </div>
 
               <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
                 <button type="button" class="bg-[#FE3D8E] text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Donate</button>
               </div>
               <p class="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
-                The Obama Presidential Center will feature a world-class museum and public gathering space on the South Side of Chicago
+                {{ major_outreach.description }}
               </p>
             </div>
         </section>
@@ -135,22 +93,31 @@
 
                     <div class="col-span-12">
                         <div id="all-properties" class="properties-tab-content active">
+                            <div class="mb-[30px] lg:mb-[60px] text-center">
+                                <span class="text-secondary text-tiny inline-block mb-2">Blog</span>
+                                <h2 class="font-lora text-primary text-[24px] sm:text-[30px] xl:text-xl capitalize font-medium">Read our awe inspiring stories<span class="text-secondary">.</span></h2>
+                            </div>
                             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+                                
+                                {% for blog in last_three_blogs %}
 
                                 <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
                                     <div class="relative">
                                         <a href="properties-details.html" class="block">
-                                            <img src="{% static 'img/BG8_4820.jpg' %}" class="w-full h-full" loading="lazy" width="370" height="266" alt="Elite Garden Resedence.">
+                                            <img src="{{ blog.image.url }}" class="w-full h-full" loading="lazy" width="370" height="266" alt="">
                                         </a>
                                     </div>
 
                                     <div class="py-[20px] px-[20px]">
-                                        <h3><a href="properties-details.html" class="font-lora leading-tight text-[22px] xl:text-[26px] text-primary font-medium">Blog Title</a></h3>
-                                        <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">Headline snippet</a></h4>
-                                        <span class="font-light text-sm">25 November, 2021</span>
+                                        <h3><a href="properties-details.html" class="font-lora leading-tight text-[22px] xl:text-[26px] text-primary font-medium">{{ blog.title}}</a></h3>
+                                        <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">{{ blog.snip | safe }}t</a></h4>
+                                        <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">by: {{ blog.writers_name }}</a></h4>
+                                        <span class="font-light text-sm">{{ blog.created_at }}</span>
                                     </div>
                                 </div>
-
+                                    
+                                {% endfor %}
+                                    
                             </div>
                         </div>
 

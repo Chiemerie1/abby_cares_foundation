@@ -17,9 +17,9 @@ class MainHeroSectionImage(models.Model):
 
 class NewsAndUpdate(models.Model):
 
-    class NewsAndUpdateManager(models.Manager):
-        def get_queryset(self):
-            return super().get_queryset()[:10]
+    # class NewsAndUpdateManager(models.Manager):
+    #     def get_queryset(self):
+    #         return super().get_queryset()[:10]
         
     image = models.ImageField(
         blank=False,
@@ -29,7 +29,7 @@ class NewsAndUpdate(models.Model):
     paragraph = tinymce_models.HTMLField()
 
     def snip(self):
-        return self.paragraph[:20] + "..."
+        return self.paragraph[:50] + "..."
     
     def __str__(self):
         return self.Headline
@@ -37,9 +37,9 @@ class NewsAndUpdate(models.Model):
 
 
 class NewMajorOutreach(models.Model):
-    class NewMajorOutreachManager(models.Manager):
-        def get_queryset(self):
-            return super().get_queryset().last()
+    # class NewMajorOutreachManager(models.Manager):
+    #     def get_queryset(self):
+    #         return super().get_queryset().last()
   
     title = models.CharField(max_length=30)
     top_image = models.ImageField(
@@ -60,7 +60,7 @@ class NewMajorOutreach(models.Model):
         return self.title
     
     def snip(self):
-        return self.paragraph[:20] + "..."
+        return self.paragraph[:50] + "..."
     
 
 
@@ -75,7 +75,7 @@ class Blog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     def snip(self):
-        return self.paragraph[:20] + "..."
+        return self.paragraph[:50] + "..."
     
     def __str__(self):
         return self.title
