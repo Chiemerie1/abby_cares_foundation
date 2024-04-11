@@ -4,17 +4,51 @@
 
 {% block content %}
 
-{{ blog.title }}
+{% comment %} {{ blog.title }}
 {{ blog.created_at }}
 {{ blog.writers_name }}
 <img src"{{ blog.image.url }}" />
 <div class="relative">
-    {% comment %} {% url 'main:blog_details' id=blog.id %} {% endcomment %}
     <a href="properties-details.html" class="block">
         <img src="{{ blog.image.url }}" class="w-full h-full" loading="lazy" width="370" height="266" alt="">
     </a>
 </div>
-{{ blog.paragraph | safe }}
+{{ blog.paragraph | safe }} {% endcomment %}
+
+<main class=" mt-12 pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased">
+    <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+        <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+            <header class="mb-4 lg:mb-6 not-format">
+                <address class="flex items-center mb-6 not-italic">
+                    <div class="inline-flex items-center mr-3 text-sm text-gray-900">
+                        {% comment %} <img class="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos"> {% endcomment %}
+                        <div>
+                            <a href="#" rel="author" class="text-xl font-bold text-gray-900">{{ blog.writers_name }}</a>
+                            {% comment %} <p class="text-base text-gray-500 dark:text-gray-400">Graphic Designer, educator & CEO Flowbite</p> {% endcomment %}
+                            <p class="text-base text-pink-700 dark:text-pink-700">{{ blog.created_at }}</time></p>
+                        </div>
+                    </div>
+                </address>
+                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">{{ blog.title }}</h1>
+            </header>
+            <p class="lead">
+                {{ blog.paragraph | safe }}
+            </p>
+
+            <figure><img src="{{ blog.image.url }}" alt="">
+                <figcaption>Digital art by Anonymous</figcaption>
+            </figure>
+            <h2>Getting started with Flowbite</h2>
+            <p>First of all you need to understand how Flowbite works. This library is not another framework.
+                Rather, it is a set of components based on Tailwind CSS that you can just copy-paste from the
+                documentation.
+            </p>            
+        </article>
+    </div>
+  </main>
+
+  
+
 
 
 

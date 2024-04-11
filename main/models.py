@@ -29,7 +29,7 @@ class NewsAndUpdate(models.Model):
     paragraph = tinymce_models.HTMLField()
 
     def snip(self):
-        return self.paragraph[:50] + "..."
+        return self.paragraph[:30] + "..."
     
     def __str__(self):
         return self.Headline
@@ -60,7 +60,7 @@ class NewMajorOutreach(models.Model):
         return self.title
     
     def snip(self):
-        return self.paragraph[:50] + "..."
+        return self.paragraph[:30] + "..."
     
 
 
@@ -75,7 +75,7 @@ class Blog(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     def snip(self):
-        return self.paragraph[:50] + "..."
+        return self.paragraph[:30] + "..."
     
     def __str__(self):
         return self.title
