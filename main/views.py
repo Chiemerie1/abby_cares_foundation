@@ -90,6 +90,54 @@ def news_and_update_details(request, id):
     )
 
 
+def about(request):
+
+    return render(
+        request=request,
+        template_name="main/about.html",
+        context={
+            "css_image_url": "/static/img/BG8_4907.jpg",
+        }
+        
+    )
+
+
+def leadership(request):
+
+    return render(
+        request=request,
+        template_name="main/leadership.html",
+        context={
+
+        }
+        
+    )
+
+
+def ways_to_give(request):
+
+    return render(
+        request=request,
+        template_name="main/ways_to_give.html",
+        context={
+
+        }
+        
+    )
+
+
+def careers(request):
+
+    return render(
+        request=request,
+        template_name="main/careers.html",
+        context={
+
+        }
+        
+    )
+
+
 def outreach(request):
     outreach = NewMajorOutreach.objects.all()
     paginator = Paginator(outreach, 12)

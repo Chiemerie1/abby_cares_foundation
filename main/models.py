@@ -25,6 +25,8 @@ class NewsAndUpdate(models.Model):
         blank=False,
         upload_to="homepage_what_we_have_done"
     )
+    image_caption = models.CharField(max_length=128, default=None)
+    excerpt = models.CharField(max_length=30, default=None)
     Headline = models.CharField(max_length=30)
     paragraph = tinymce_models.HTMLField()
 
@@ -70,7 +72,9 @@ class Blog(models.Model):
         blank=False,
         upload_to="major_outreach"
     )
+    image_caption = models.CharField(max_length=128, default=None)
     paragraph = tinymce_models.HTMLField()
+    excerpt = models.CharField(max_length=30, default=None)
     writers_name = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     
