@@ -21,7 +21,7 @@ urlpatterns = [
     path("news_and_update_details/<int:id>", views.news_and_update_details , name="news_and_update_details"),
     path("about/", views.about , name="about"),
     path("leadership/", views.leadership , name="leadership"),
-    path("ways-to-give/", views.ways_to_give , name="ways_to_give"),
+    path("ways_to_give/", views.ways_to_give , name="ways_to_give"),
     path("careers/", views.careers , name="careers"),
 
 ]

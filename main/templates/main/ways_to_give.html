@@ -1,0 +1,89 @@
+{% extends 'layout/nav.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<section class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[40%]" style="background-image: url('{{ css_image_url }}');">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-12">
+            <div class="col-span-12">
+                <div class="max-w-[480px]  mx-auto text-center text-white relative z-[1]">
+                    <div class="mb-5"><span class="text-base block">About us</span></div>
+                    <h1 class="font-lora text-[36px] sm:text-[50px] md:text-[68px] lg:text-[50px] leading-tight xl:text-5xl font-medium">
+                        Ways to give
+                    </h1>
+
+                    <p class="text-base mt-5">
+                        Empowering rural communities to lead healthy and fulfilling lives through accessible and comprehensive health promotion linkage services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service sction start -->
+<section class="service-section mt-5">
+
+    <div class="container mx-auto">
+        <div class="grid grid-cols-12 text-center">
+            <div class="col-span-12 text-center mb-[55px]">
+                <div class="max-w-[460px] mx-auto">
+                    {% comment %} <span class="text-secondary text-tiny inline-block mb-2">How we Works</span> {% endcomment %}
+                    <h2 class="font-lora text-primary text-[24px] sm:text-[30px] leading-[1.277] xl:text-xl capitalize mb-3 font-medium">
+                        It’s very Simple<span class="text-secondary">.</span></h2>
+
+                    <p>Huge number of propreties availabe here for buy, sell and Rent.
+                        Also you find here co-living property, lots opportunity</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid gap-x-[50px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-[-30px] xl:px-[35px] lg:mx-40">
+            <div class="relative p-[20px] xl:p-[30px] mb-[30px] bg-[#F5F9F8] hover:bg-[#1E1E1E] hover:text-[#FE3D8E] hover:font-semibold transition-all drop-shadow-[0px_10px_20px_rgba(0,0,0,0.15)] rounded-[10px] skew-left">
+                <div class="flex flex-wrap justify-between">
+                    <span
+                        class="font-lora text-[28px] leading-none text-secondary mb-[10px] block">Naira (₦)</span>
+                    {% comment %} <img class="self-start mb-[-20px] md:mb-[0] lg:mb-[-20px]" src="assets/images/service-icon/chart.png" alt="image" width="50" height="50" loading='lazy' /> {% endcomment %}
+                </div>
+                <h3 class="font-lora text-base text-primary mb-[5px]">Account Name: Abby Cares Foundation</h3>
+                <h3 class="font-lora text-base text-primary mb-[5px]">Bank name: Zenith Bank Nigeria</h3>
+                <h3 class="font-lora text-base text-primary mb-[5px]">Account number: 1228765328</h3>
+                {% comment %} <p class="font-light text-[14px] max-w-[250px]">
+                    Bank name: Zenith Bank
+                </p> {% endcomment %}
+            </div>
+            <div class="relative p-[20px] xl:p-[30px] mb-[30px] bg-[#FFF6F0] hover:bg-[#1E1E1E] hover:text-[#FE3D8E] hover:font-semibold transition-all drop-shadow-[0px_10px_20px_rgba(0,0,0,0.15)] rounded-[10px]">
+                <div class="flex flex-wrap justify-between">
+                    <span
+                        class="font-lora text-[28px] leading-none text-secondary mb-[10px] block">Dollar ($)</span>
+                    {% comment %} <img class="self-start mb-[-20px] md:mb-[0] lg:mb-[-20px]" src="assets/images/service-icon/note.png" alt="image" width="50" height="50" loading='lazy' /> {% endcomment %}
+                </div>
+                <h3 class="font-lora text-base text-primary mb-[5px]">Account Name: Abby Cares Foundation</h3>
+                <h3 class="font-lora text-base text-primary mb-[5px]">Bank name: Zenith Bank Nigeria</h3>
+                <h3 class="font-lora text-base text-primary mb-[5px]">Account number: 5074565682</h3>
+                {% comment %} <p class="font-light text-[14px] max-w-[250px]">
+                    Bank name: Zenith Bank
+                </p> {% endcomment %}
+            </div>
+            <div class="relative p-[20px] xl:p-[30px] mb-[30px] bg-[#F5F9F8] hover:bg-[#1E1E1E] hover:text-[#FE3D8E] hover:font-semibold transition-all drop-shadow-[0px_10px_20px_rgba(0,0,0,0.15)] rounded-[10px] skew-right">
+                <div class="flex flex-wrap justify-between">
+                    <span
+                        class="font-lora text-[28px] leading-none text-secondary mb-[10px] block">03.</span>
+                    {% comment %} <img class="self-start mb-[-20px] md:mb-[0] lg:mb-[-20px]" src="assets/images/service-icon/key.png" alt="image" width="50" height="54" loading='lazy' /> {% endcomment %}
+                </div>
+                <h3 class="font-lora text-base text-primary mb-[5px]">Account Name: Abby Cares Foundation</h3>
+                <h3 class="font-lora text-base text-primary mb-[5px]">Bank name: Zenith Bank Nigeria</h3>
+                <h3 class="font-lora text-base text-primary mb-[5px]">Account number: 1228765328</h3>
+                {% comment %} <p class="font-light text-[14px] max-w-[250px]">
+                    Bank name: Zenith Bank
+                </p> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Service sction end -->
+
+{% endblock %}
