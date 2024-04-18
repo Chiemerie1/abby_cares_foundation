@@ -23,6 +23,7 @@ urlpatterns = [
     path("leadership/", views.leadership , name="leadership"),
     path("ways_to_give/", views.ways_to_give , name="ways_to_give"),
     path("careers/", views.careers , name="careers"),
+    path("donate/", views.donate , name="donate"),
 
 ]
 

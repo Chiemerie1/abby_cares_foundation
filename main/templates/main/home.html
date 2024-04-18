@@ -28,39 +28,34 @@
         </section>
 
 
-        
-        <section class="explore-cities-section pt-[80px] pb-[120px] lg:py-[120px]">
+        <section class="featured-properties py-[80px] lg:py-[80px]">
             <div class="container mx-auto">
-                <div class="">
-                    <div class="">
-                        <div class="mb-[30px] lg:mb-[60px] text-center">
-                            <span class="text-secondary text-tiny inline-block mb-2">News and Updates</span>
-                            <h2 class="font-lora text-primary text-[24px] sm:text-[30px] xl:text-xl capitalize font-medium">See what we have done with what we have<span class="text-secondary">.</span></h2>
-                        </div>
-                        <div class="cities-slider">
-                            <div class="swiper -mx-[30px] -my-[60px] px-[30px] py-[60px]">
-                                <div class="swiper-wrapper">
-                                    <!-- swiper-slide start -->
-                                    {% for news in news_and_update %}
-                                    <div class="swiper-slide text-center">
-                                        <div class="relative group">
-                                            <a href="agency.html" class="block">
-                                                <img src="{{ news.image.url }}" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290">
-                                                <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
-                                                    <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">{{ news.Headline }}</span>
-                                                    {% comment %} <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">{{ news.snip | safe }}</p> {% endcomment %}
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
+                <div class="grid grid-cols-12">
 
-                                    <!-- swiper-slide end-->
+                    <div class="col-span-12">
+                        <div id="all-properties" class="properties-tab-content active">
+                            <div class="mb-[30px] lg:mb-[60px] text-center">
+                                <span class="text-secondary text-tiny inline-block mb-2">News and Updates</span>
+                                <h2 class="font-lora text-primary text-[24px] sm:text-[30px] xl:text-xl capitalize font-medium">See what we have done with what we have<span class="text-secondary">.</span></h2>
+                            </div>
+                            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px] lg:mx-40">
+                                
+                                {% for news in news_and_update %}
+                                <div class="relative group text-center">
+                                    <a href="{% url 'main:news_and_update_details' id=news.id %}" class="block">
+                                        <img src="{{ news.image.url }}" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290">
+                                        <div class="cities-shadow bg-[#FFFDFC] rounded-[0px_0px_6px_6px] px-[15px] py-[20px]">
+                                            <span class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all">{{ news.Headline }}</span>
+                                            {% comment %} <p class="font-light text-tiny capitalize text-secondary group-hover:text-primary transition-all">{{ news.snip | safe }}</p> {% endcomment %}
+                                        </div>
+                                    </a>
                                 </div>
-                                <!-- Add Pagination -->
-                                <div class="swiper-pagination"></div>
+                                {% endfor %}
+
+                                    
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -68,8 +63,14 @@
 
          <!-- Team Section Etart-->
 
-         <section class="team-section pt-[80px] lg:pt-[120px]">
+         <section class="team-section pt-[80px] lg:pt-[50px]">
             <div class="container mx-auto">
+
+                <div class="mb-[30px] lg:mb-[60px] text-center">
+                    <span class="text-secondary text-tiny inline-block mb-2">Abby Cares Foundation</span>
+                    <h2 class="font-lora text-primary text-[24px] sm:text-[30px] xl:text-xl capitalize font-medium">Our Services<span class="text-secondary"></span></h2>
+                </div>
+
                 <div class="grid grid-cols-12 gap-x-[30px] mb-[-30px]">
 
                     <div class="col-span-12 md:col-span-5 lg:col-span-4 mb-[30px]">
@@ -82,15 +83,15 @@
 
                             <div class="drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] rounded-[0px_0px_6px_6px] px-[15px] py-[20px] border-b-[6px] bg-primary transition-all duration-700 border-secondary">
                                 <h3 class="font-lora font-normal text-[28px] text-[#1E1E1E]">Abby Cares</h3>
-                                <p class="font-normal text-[18px] leading-none capitalize mb-[5px] text-white">Real
-                                    Estate Broker
+                                <p class="font-normal text-[18px] leading-none capitalize mb-[5px] text-[#1E1E1E]">
+                                    +234 810 676 1886
                                 </p>
 
                                 
                                 <ul class="inline-flex items-center justify-center absolute w-full top-[-30px] left-0">
 
                                     <li class="ml-[15px]">
-                                        <a href="https://www.facebook.com/share/YXgqhfciBdDs61px/?mibextid=qi2Omg" class="w-[43px] h-[43px] transition-all rounded-full bg-[#FFF6F0] flex items-center justify-center hover:drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] text-[#494949] hover:text-[#3B5998]">
+                                        <a href="https://www.facebook.com/share/YXgqhfciBdDs61px/?mibextid=qi2Omg" class="w-[43px] h-[43px] transition-all rounded-full bg-[#FFF6F0] flex items-center justify-center hover:drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] text-[#494949] hover:text-[#ff4694]">
                                             <svg width="10" height="19" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M6.09447 6.52324V4.73709C6.09447 3.96309 6.27309 3.54632 7.52339 3.54632H9.07139V0.569397H6.68986C3.71293 0.569397 2.52216 2.53417 2.52216 4.73709V6.52324H0.140625V9.50017H2.52216V18.4309H6.09447V9.50017H8.71416L9.07139 6.52324H6.09447Z" fill="currentColor" />
                                             </svg>
@@ -98,7 +99,7 @@
                                     </li>
 
                                     <li class="ml-[15px]">
-                                        <a href="#" class="w-[43px] h-[43px] transition-all rounded-full bg-[#FFF6F0] flex items-center justify-center hover:drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] text-[#494949] hover:text-[#3B5998]">
+                                        <a href="#" class="w-[43px] h-[43px] transition-all rounded-full bg-[#FFF6F0] flex items-center justify-center hover:drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] text-[#494949] hover:text-[#ff4694]">
                                             <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M22.3325 2.78225C21.506 3.1432 20.6307 3.37988 19.7349 3.48458C20.6751 2.93245 21.3822 2.05688 21.7239 1.02145C20.833 1.54002 19.8614 1.90527 18.8495 2.10197C18.4234 1.65565 17.9109 1.30083 17.3432 1.05914C16.7754 0.817445 16.1644 0.693954 15.5474 0.696197C13.0489 0.696197 11.0235 2.69184 11.0235 5.15056C11.0235 5.49897 11.0632 5.83966 11.1404 6.16492C9.34827 6.07968 7.59358 5.6218 5.98831 4.82049C4.38303 4.01918 2.96242 2.89204 1.81712 1.51099C1.4156 2.18841 1.20455 2.96172 1.2063 3.7492C1.20707 4.48567 1.39134 5.21035 1.74247 5.85773C2.09359 6.50512 2.6005 7.05481 3.21738 7.45712C2.50014 7.43397 1.7984 7.24248 1.16881 6.89812V6.95325C1.16881 9.11207 2.72894 10.9126 4.79625 11.3227C4.40772 11.4258 4.00746 11.4781 3.60548 11.4782C3.3133 11.4782 3.02994 11.4506 2.7532 11.3955C3.04878 12.2863 3.61442 13.0629 4.37156 13.6175C5.12871 14.1721 6.03977 14.4772 6.97822 14.4904C5.36856 15.7303 3.39249 16.4001 1.36066 16.3945C0.994609 16.3945 0.635173 16.3725 0.28125 16.3328C2.35545 17.6456 4.76052 18.3408 7.21528 18.3372C15.5363 18.3372 20.0855 11.5487 20.0855 5.66215L20.0701 5.0855C20.9575 4.46109 21.7241 3.68067 22.3325 2.78225Z" fill="currentColor" />
                                             </svg>
@@ -106,7 +107,7 @@
                                     </li>
 
                                     <li class="ml-[15px]">
-                                        <a href="#" class="w-[43px] h-[43px] transition-all rounded-full bg-[#FFF6F0] flex items-center justify-center hover:drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] text-[#494949] hover:text-[#3B5998]">
+                                        <a href="#" class="w-[43px] h-[43px] transition-all rounded-full bg-[#FFF6F0] flex items-center justify-center hover:drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] text-[#494949] hover:text-[#ff4694]">
                                             <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M11.1121 5.19942C8.17913 5.19942 5.81207 7.56648 5.81207 10.4995C5.81207 13.4325 8.17913 15.7995 11.1121 15.7995C14.0451 15.7995 16.4122 13.4325 16.4122 10.4995C16.4122 7.56648 14.0451 5.19942 11.1121 5.19942ZM11.1121 13.9441C9.21537 13.9441 7.66748 12.3962 7.66748 10.4995C7.66748 8.60272 9.21537 7.05482 11.1121 7.05482C13.0089 7.05482 14.5568 8.60272 14.5568 10.4995C14.5568 12.3962 13.0089 13.9441 11.1121 13.9441ZM16.6293 3.74713C15.9445 3.74713 15.3915 4.30014 15.3915 4.98493C15.3915 5.66973 15.9445 6.22273 16.6293 6.22273C17.3141 6.22273 17.8671 5.67231 17.8671 4.98493C17.8673 4.82233 17.8354 4.66127 17.7733 4.51101C17.7111 4.36074 17.6199 4.2242 17.505 4.10922C17.39 3.99424 17.2535 3.90307 17.1032 3.84094C16.9529 3.77881 16.7919 3.74693 16.6293 3.74713ZM21.4435 10.4995C21.4435 9.07303 21.4564 7.65951 21.3763 6.23565C21.2962 4.58181 20.9189 3.11402 19.7095 1.90464C18.4976 0.692685 17.0324 0.317986 15.3785 0.237878C13.9521 0.15777 12.5386 0.170691 11.1147 0.170691C9.68827 0.170691 8.27475 0.15777 6.85089 0.237878C5.19704 0.317986 3.72925 0.69527 2.51988 1.90464C1.30792 3.1166 0.933221 4.58181 0.853112 6.23565C0.773004 7.6621 0.785925 9.07562 0.785925 10.4995C0.785925 11.9233 0.773004 13.3394 0.853112 14.7633C0.933221 16.4171 1.3105 17.8849 2.51988 19.0943C3.73184 20.3063 5.19704 20.681 6.85089 20.7611C8.27733 20.8412 9.69085 20.8283 11.1147 20.8283C12.5412 20.8283 13.9547 20.8412 15.3785 20.7611C17.0324 20.681 18.5002 20.3037 19.7095 19.0943C20.9215 17.8823 21.2962 16.4171 21.3763 14.7633C21.459 13.3394 21.4435 11.9259 21.4435 10.4995ZM19.1695 16.5929C18.9808 17.0632 18.7534 17.4146 18.3891 17.7764C18.0247 18.1408 17.6758 18.3682 17.2055 18.5568C15.8463 19.0969 12.6187 18.9754 11.1121 18.9754C9.60558 18.9754 6.37541 19.0969 5.01615 18.5594C4.54584 18.3708 4.1944 18.1433 3.83262 17.779C3.46826 17.4146 3.24085 17.0658 3.05221 16.5954C2.51471 15.2336 2.63617 12.006 2.63617 10.4995C2.63617 8.99293 2.51471 5.76276 3.05221 4.4035C3.24085 3.93319 3.46826 3.58175 3.83262 3.21997C4.19698 2.85819 4.54584 2.6282 5.01615 2.43956C6.37541 1.90206 9.60558 2.02351 11.1121 2.02351C12.6187 2.02351 15.8488 1.90206 17.2081 2.43956C17.6784 2.6282 18.0299 2.85561 18.3916 3.21997C18.756 3.58433 18.9834 3.93319 19.172 4.4035C19.7095 5.76276 19.5881 8.99293 19.5881 10.4995C19.5881 12.006 19.7095 15.2336 19.1695 16.5929Z" fill="currentColor" />
                                             </svg>
@@ -119,24 +120,47 @@
                         </div>
                     </div>
 
-                    <div class="col-span-12 md:col-span-7 lg:col-span-5 mb-[30px]">
+                    <div class="col-span-12 md:col-span-7 lg:col-span-5 mb-[30px] px-2">
+
                         <div class="mb-[-30px]">
                             <div class="mb-[30px]">
-                                <h3 class="font-lora font-medium text-[28px] text-primary mb-[10px]">Birography<span class="text-secondary">.</span></h3>
-                                <p>Huge number of propreties availabe here for buy, sell and Rent.
-                                    Also you find here co-living property, lots opportunity you have to
-                                    choose here and enjoy huge discount you can get. She work like a
-                                    machine and can serve best service for the clients. </p>
+                                <h3 class="font-lora font-medium text-[24px] text-primary mb-[10px]">Health Promotion Linkage Services<span class="text-secondary">.</span></h3>
+                                <p>
+                                    Our health promotion services are tailored to the needs of the rural communities including preventive screenings,
+                                    health education, FREE medical outreach, medical referrals for treatments at the secondary and tertiary hospitals and follow up at the PHC
+                                </p>
                             </div>
                             <div class="mb-[30px]">
-                                <h3 class="font-lora font-medium text-[28px] text-primary mb-[10px]">Overview<span class="text-secondary">.</span></h3>
-                                <p>Huge number of propreties availabe here for buy, sell and Rent.
-                                    Also you find here co-living property, lots opportunity you have to
-                                    choose here and enjoy huge discount you can get. She work like a
-                                    machine and can serve best service for the clients. </p>
-                                <span class="font-lora font-normal block text-secondary text-[18px] mt-[10px]">
+                                <h3 class="font-lora font-medium text-[24px] text-primary mb-[10px]">Community Outreach Programs<span class="text-secondary">.</span></h3>
+                                <p>
+                                    Our FREE Medical Outreach Programs allows us to deliver health care/medical services to
+                                    the underserved communities; reaching a broader segment of the population
+                                </p>
+                            </div>
+                            
+                            <div class="mb-[30px]">
+                                <h3 class="font-lora font-medium text-[24px] text-primary mb-[10px]">Access to Medical Care Referrals and Treatments<span class="text-secondary">.</span></h3>
+                                <p>
+                                    To streamline the accessibility of care/medical treatment, the foundation receives referrals at 
+                                    the Primary Health Care Center (PHC) and via medical outreach. Patients are not charged for 
+                                    consultation with the physicians/nurses. The foundation assists in financing the cost of medical treatments.
+                                    Prescribed medications are given at a discounted rate or FREE at the PHC through the foundation.
+                                    Referrals to the secondary/tertiary medical institutions are prompt with assigned case managers for follow-up/checkup at the PHC.
+                                </p>
+                                {% comment %} <span class="font-lora font-normal block text-secondary text-[18px] mt-[10px]">
                                     Phone no. </span>
-                                <a href="tel:+9985254784" class="font-lora font-medium text-primary text-[28px]">+9985 254 784</a>
+                                <a href="tel:+9985254784" class="font-lora font-medium text-primary text-[28px]">+9985 254 784</a> {% endcomment %}
+                            </div>
+                            <div class="mb-[30px]">
+                                <h3 class="font-lora font-medium text-[24px] text-primary mb-[10px]">Maternal and Child Health Service<span class="text-secondary">.</span></h3>
+                                <p>To improve access to quality healthcare services for pregnant women and improved pregnancy outcomes,
+                                    the foundation assists in financing the cost of registered antenatal patients requiring pregnancy
+                                    ultrasound by subsidizing 50% of the cost including transportation to and from the PHC.
+                                    Pregnant women also receive FREE medical consults and treatments through the Family Physician and Gynecologist.
+                                </p>
+                                {% comment %} <span class="font-lora font-normal block text-secondary text-[18px] mt-[10px]">
+                                    Phone no. </span>
+                                <a href="tel:+9985254784" class="font-lora font-medium text-primary text-[28px]">+9985 254 784</a> {% endcomment %}
                             </div>
                         </div>
 
@@ -145,19 +169,19 @@
                     <div class="col-span-12 lg:col-span-3 mb-[30px]">
                         <ul class="flex flex-wrap lg:flex-col list-none items-center justify-around lg:justify-between bg-[#F5F9F8] rounded-[8px] h-full text-center py-[30px] lg:py-[65px] xl:max-w-[230px]">
                             <li class="block">
-                                <span class="font-lora text-secondary text-lg"><span class="counter-up">135</span>
+                                <span class="font-lora text-secondary text-lg"><span class="counter-up">1</span>
                                 <span>k+</span></span>
-                                <p>Properties Sold</p>
-                            </li>
-                            <li class="block">
-                                <span class="font-lora text-secondary text-lg"><span class="counter-up">172</span>
-                                <span>k+</span></span>
-                                <p>Customers</p>
+                                <p>Patients</p>
                             </li>
                             <li class="block">
                                 <span class="font-lora text-secondary text-lg"><span class="counter-up">10</span>
-                                <span>+</span></span>
-                                <p>Awards Win</p>
+                                <span>k+</span></span>
+                                <p>Comunities</p>
+                            </li>
+                            <li class="block">
+                                <span class="font-lora text-secondary text-lg"><span class="counter-up">1</span>
+                                <span></span></span>
+                                <p>Recognition</p>
                             </li>
                         </ul>
                     </div>
@@ -167,7 +191,7 @@
 
         <!-- Team Section End-->
 
-        <section class="py-6 px-4 sm:p-6 md:py-10 md:px-8 border border-t-2 bg-[#1E1E1E]">
+        <section class="py-6 px-4 sm:p-6 md:py-10 md:px-8 border border-t-2 bg-[#1E1E1E] mt-5">
             <div class="max-w-4xl mx-auto grid grid-cols-1 lg:max-w-5xl lg:gap-x-20 lg:grid-cols-2">
               <div class="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
                 <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">{{ major_outreach.title }}</h1>
@@ -180,7 +204,7 @@
               </div>
 
               <div class="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4">
-                <button type="button" class="bg-[#FE3D8E] text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Donate</button>
+                <button type="button" class="bg-[#FE3D8E] text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"><a href="/donate">Donate</a></button>
               </div>
               <p class="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
                 {{ major_outreach.description }}
@@ -230,80 +254,44 @@
 
         
 
-        <section>
-            <div class="relative isolate overflow-hidden bg-[#1E1E1E] py-24 sm:py-32 items-center justify-center text-center">
-                {% comment %} <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"> {% endcomment %}
-                <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
-                <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-                </div>
-                <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
-                <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#1E1E1E] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-                </div>
-                <div class="mx-auto max-w-7xl px-6 lg:px-8 ">
-                    <div class="mx-auto max-w-2xl lg:mx-0">
-                        <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with us</h2>
-                        <p class="mt-6 text-lg leading-8 text-gray-300">
-                            To volunteer: Email us at service@abbycaresfoundation.org. <br>
-                             Call or WhatsApp +234 810 676 1886. 
-                        </p>
-                    </div>
-                    {% comment %} <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-                        <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-                        <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
-                        <a href="#">Internship program <span aria-hidden="true">&rarr;</span></a>
-                        <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
-                        <a href="#">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
-                        </div>
-                        <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
-                        <div class="flex flex-col-reverse">
-                            <dt class="text-base leading-7 text-gray-300">Offices worldwide</dt>
-                            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">12</dd>
-                        </div>
-                        <div class="flex flex-col-reverse">
-                            <dt class="text-base leading-7 text-gray-300">Full-time colleagues</dt>
-                            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">300+</dd>
-                        </div>
-                        <div class="flex flex-col-reverse">
-                            <dt class="text-base leading-7 text-gray-300">Hours per week</dt>
-                            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">40</dd>
-                        </div>
-                        <div class="flex flex-col-reverse">
-                            <dt class="text-base leading-7 text-gray-300">Paid time off</dt>
-                            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">Unlimited</dd>
-                        </div>
-                        </dl>
-                    </div> {% endcomment %}
+        <section class="bg-[#1E1E1E] dark:bg-[#1E1E1E]">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
+                <div class="mx-auto max-w-screen-md sm:text-center">
+                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl dark:text-white">To volunteer</h2>
+                    <p class="mx-auto mb-8 max-w-2xl  text-white md:mb-12 sm:text-xl dark:text-gray-400">
+                        Email us at service@abbycaresfoundation.org<br>
+                        Call or WhatsApp +234 810 676 1886.</p>
                 </div>
             </div>
         </section>
 
 
-        <section class="bg-white dark:bg-gray-900">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <section class="bg-[#1E1E1E] dark:bg-[#1E1E1E]">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-8 lg:px-6">
                 <div class="mx-auto max-w-screen-md sm:text-center">
-                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">Sign up for our newsletter</h2>
-                    <p class="mx-auto mb-8 max-w-2xl  text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">Stay up to date with the roadmap progress, and announcements. Feel free to sign up with your email.</p>
+                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl dark:text-white">Sign up for our newsletter</h2>
+                    <p class="mx-auto mb-8 max-w-2xl  text-white md:mb-12 sm:text-xl dark:text-white">Stay up to date with the roadmap progress, and announcements. Feel free to sign up with your email.</p>
                     <form action="#">
                         <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                             <div class="relative w-full">
-                                <label for="email" class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
+                                <label for="email" class="hidden mb-2 text-sm font-medium text-white dark:text-white">Email address</label>
                                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                                    <svg class="w-4 h-4 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
                                       <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
                                       <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
                                    </svg>
                                 </div>
-                                <input class="block p-3 pl-9 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter your email" type="email" id="email" required="">
+                                <input class="block p-3 pl-9 w-full text-sm text-white bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter your email" type="email" id="email" required="">
                             </div>
                             <div>
                                 <button type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Subscribe</button>
                             </div>
                         </div>
-                        <div class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300">We care about the protection of your data. <a href="#" class="font-medium text-primary-600 dark:text-primary-500 hover:underline">Read our Privacy Policy</a>.</div>
+                        <div class="mx-auto max-w-screen-sm text-sm text-left text-white newsletter-form-footer dark:text-white">We care about the protection of your data. <a href="#" class="font-medium text-primary-600 dark:text-primary-500 hover:underline">Read our Privacy Policy</a>.</div>
                     </form>
                 </div>
             </div>
-          </section>
+        </section>
           
 
 

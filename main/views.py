@@ -9,7 +9,7 @@ from .models import MainHeroSectionImage, NewsAndUpdate, NewMajorOutreach
 def home(request):
 
     hero_image = MainHeroSectionImage.objects.last()
-    news_and_update = NewsAndUpdate.objects.all().order_by("-id")[:5]
+    news_and_update = NewsAndUpdate.objects.all().order_by("-id")[:3]
     major_outreach = NewMajorOutreach.objects.last()
     last_three_blogs = Blog.objects.all().order_by("-id")[:3]
 
@@ -107,6 +107,18 @@ def leadership(request):
     return render(
         request=request,
         template_name="main/leadership.html",
+        context={
+
+        }
+        
+    )
+
+
+def donate(request):
+
+    return render(
+        request=request,
+        template_name="main/donate.html",
         context={
 
         }
