@@ -41,12 +41,12 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] lg:mx-40">
 
             {% for news in news_and_update %}
-            <div class="relative group">
-                <a href="#" class="block">
+            <div class="relative group text-center">
+                <a href="{% url 'main:news_and_update_details' id=news.id %}" class="block">
                     <img src="{{ news.image.url }}" class="w-full h-full block mx-auto rounded-[6px_6px_0px_0px]" loading="lazy" width="270" height="290" alt="Sale Property">
                     <div class="drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] hover:drop-shadow-[0px_8px_20px_rgba(0,0,0,0.15)] bg-[#1E1E1E] text-white rounded-[0px_0px_6px_6px] px-[25px] py-[25px]">
                         <h3 class="font-lora font-normal text-[24px] xl:text-lg text-primary group-hover:text-secondary transition-all mb-[5px]">{{ news.Headline }}<span class="text-secondary group-hover:text-primary">.</span></h3>
-                        <p class="font-light text-tiny">{{ news.snip }}</p>
+                        <p class="font-light text-tiny">{{ news.excerpt }}</p>
                     </div>
                 </a>
             </div>

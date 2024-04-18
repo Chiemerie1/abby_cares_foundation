@@ -34,14 +34,36 @@
 
     <style>
         .sticky-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: white; /* Adjust background color as needed */
-      z-index: 1000; /* Adjust z-index as needed */
-  }
-      </style>
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white; /* Adjust background color as needed */
+        z-index: 1000; /* Adjust z-index as needed */
+        }
+    </style>
+
+    <style>
+        @media(max-width:1520px) {
+            .left-svg {
+                display: none;
+            }
+        }
+
+        /* small css for the mobile nav close */
+        #nav-mobile-btn.close span:first-child {
+            transform: rotate(45deg);
+            top: 4px;
+            position: relative;
+            background: #a0aec0;
+        }
+
+        #nav-mobile-btn.close span:nth-child(2) {
+            transform: rotate(-45deg);
+            margin-top: 0px;
+            background: #a0aec0;
+        }
+    </style>
 
 </head>
 
@@ -178,6 +200,26 @@
                                         </button>
                                     </div>
                                 </ul>
+
+                                <!-- mobile menu -->
+                                <div class="hidden mobile-menu">
+                                    <ul class="">
+                                        <li class="active"><a href="/" class="block text-sm px-2 py-4 text-white bg-[#FE3D8E] font-semibold">Home</a></li>
+                                        <li><a href="/about" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">About</a></li>
+                                        <li><a href="/blogs" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">Blog</a></li>
+                                        <li><a href="/news_and_update" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">News and updates</a></li>
+                                        <li><a href="/donate" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">Donate</a></li>
+                                    </ul>
+                                </div>
+                                <script>
+                                    const btn = document.querySelector("button.mobile-menu-button");
+                                    const menu = document.querySelector(".mobile-menu");
+
+                                    btn.addEventListener("click", () => {
+                                        menu.classList.toggle("hidden");
+                                    });
+                                </script>
+
                             </nav>
                         </div>
                     </div>
