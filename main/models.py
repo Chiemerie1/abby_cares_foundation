@@ -84,3 +84,13 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     
+
+
+class VolunteerContact(models.Model):
+    first_name = models.CharField(max_length=250)
+    last_name = models.CharField(max_length=250)
+    phone_number = models.CharField(max_length=14)
+    email = models.EmailField()
+
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}'

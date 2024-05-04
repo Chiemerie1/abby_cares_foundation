@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Blog
 from django.core.paginator import Paginator
 from .models import MainHeroSectionImage, NewsAndUpdate, NewMajorOutreach
+from .forms import VolunteerContactForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -13,7 +15,14 @@ def home(request):
     major_outreach = NewMajorOutreach.objects.last()
     last_three_blogs = Blog.objects.all().order_by("-id")[:3]
 
-
+    if request.method == "POST":
+        form = VolunteerContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "You information has been successfully submitted")
+            return redirect("main:home")
+            
+    form = VolunteerContactForm()
     return render(
         request=request,
         template_name="main/home.html",
@@ -21,7 +30,8 @@ def home(request):
             "hero_image": hero_image,
             "news_and_update": news_and_update,
             "major_outreach": major_outreach,
-            "last_three_blogs": last_three_blogs
+            "last_three_blogs": last_three_blogs,
+            "form": form
         }
     )
 
