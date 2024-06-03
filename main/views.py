@@ -130,7 +130,7 @@ def donate(request):
         request=request,
         template_name="main/donate.html",
         context={
-
+            
         }
         
     )
@@ -142,7 +142,7 @@ def ways_to_give(request):
         request=request,
         template_name="main/ways_to_give.html",
         context={
-
+            "css_image_url": "/static/img/donate.jpg",
         }
         
     )
@@ -171,6 +171,41 @@ def outreach(request):
         template_name="main/outreach.html",
         context={
             "page_object": page_object,
+        }
+        
+    )
+
+
+def volunteers(request):
+
+    if request.method == "POST":
+        form = VolunteerContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "You information has been successfully submitted")
+            return redirect("main:volunteers")
+    form = VolunteerContactForm()
+
+    return render(
+        request=request,
+        template_name="main/volunteers.html",
+        context={
+            "css_image_url": "/static/img/donate.jpg",
+                        "form": form
+
+        }
+        
+    )
+
+
+
+def focus_area(request):
+
+    return render(
+        request=request,
+        template_name="main/focus_area.html",
+        context={
+            "css_image_url": "/static/img/donate.jpg",
         }
         
     )

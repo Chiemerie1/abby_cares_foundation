@@ -73,44 +73,55 @@
         <!-- Header start -->
 
         <header id="sticky-header" class="sticky-header relative bg-[#fff6fa] lg:py-[10px] z-[25] secondary-sticky">
+            {% if messages %}
+            {% for message in messages %}
+            <div
+                class="bg-green-700 text-white text-center flex items-center justify-center z-[100]"
+                role="alert"
+            >
+                <p>{{ message }}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
             <div class="container mx-auto">
                 <div class="grid grid-cols-12">
+                    
                     <div class="col-span-12">
                         <div class="flex flex-wrap items-center justify-between">
                             <a href="/" class="block px-4 py-2">
                                 <img class="w-full h-full" src="{% static 'img/abby_cares_logo_main.png' %}" loading="lazy" alt="brand logo">
                             </a>
-                            <nav class="flex flex-wrap items-center font-semibold text-[#1E1E1E] sm:mr-40">
+                            <nav class="flex flex-wrap items-center font-normalOu text-[#1E1E1E] sm:mr-40">
                                 <ul class="hidden lg:flex flex-wrap items-center font-lora text-[16px] xl:text-[18px] leading-none">
 
                                     <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
 
-                                        <a href="/about" class="transition-all hover:text-secondary">About</a>
+                                        <a href="/about" class="transition-all hover:text-secondary">About Us</a>
 
                                         <ul class="list-none bg-white drop-shadow-[0px_6px_10px_rgba(0,0,0,0.2)] rounded-[12px] flex flex-wrap flex-col w-[220px] absolute top-[120%] left-1/2 -translate-x-1/2 transition-all
                                             group-hover:top-[100%] invisible group-hover:visible opacity-0 group-hover:opacity-100"
                                         >
                                             <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
                                                 <a href="/about" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-t-[12px]">
-                                                    Our Mission
+                                                    Mission and Vision
+                                                </a>
+                                            </li>
+
+                                            <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
+                                                <a href="/focus_area" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-b-[12px]">
+                                                    Focus Areas
                                                 </a>
                                             </li>
 
                                             <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
                                                 <a href="/leadership" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-b-[12px]">
-                                                    leadership
+                                                    Our Team
                                                 </a>
                                             </li>
 
                                             <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                <a href="/ways_to_give" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-b-[12px]">
-                                                    Ways to Give
-                                                </a>
-                                            </li>
-
-                                            <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                <a href="/careers" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-b-[12px]">
-                                                    Careers
+                                                <a href="#" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-b-[12px]">
+                                                    History and Impact
                                                 </a>
                                             </li>
                                         </ul>
@@ -118,7 +129,7 @@
                                     </li>
                                     <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
 
-                                        <a href="#" class="transition-all hover:text-secondary">Our Programs</a>
+                                        <a href="#" class="transition-all hover:text-secondary">Projects</a>
 
                                         {% comment %} <ul class="list-none bg-white drop-shadow-[0px_6px_10px_rgba(0,0,0,0.2)] rounded-[12px] flex flex-wrap flex-col w-[220px] absolute top-[120%] left-1/2 -translate-x-1/2 transition-all
                                             group-hover:top-[100%] invisible group-hover:visible opacity-0 group-hover:opacity-100"
@@ -145,25 +156,29 @@
                                     
                                     <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
 
-                                        <a href="#" class="transition-all hover:text-secondary">Abby Cares Center</a>
+                                        <a href="#" class="transition-all hover:text-secondary">Get Involved</a>
                                         <ul class="list-none bg-white drop-shadow-[0px_6px_10px_rgba(0,0,0,0.2)] rounded-[12px] flex flex-wrap flex-col w-[220px] absolute top-[120%] left-1/2 -translate-x-1/2 transition-all
             group-hover:top-[100%] invisible group-hover:visible opacity-0 group-hover:opacity-100
             
             ">
                                             <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid hover:bg-[#1E1E1E] transition-all">
-                                                <a href="/news_and_update" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-t-[12px]">
-                                                    News and Update
+                                                <a href="/volunteers" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-t-[12px]">
+                                                    Volunteers
                                                 </a>
                                             </li>
                                             <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid hover:bg-[#1E1E1E] transition-all">
                                                 <a href="#" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px]">
-                                                    Community Outreach
+                                                    Donate
                                                 </a>
                                             </li>
-
                                             <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid hover:bg-[#1E1E1E] transition-all">
                                                 <a href="#" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px]">
-                                                    Stories in video
+                                                    Partnership
+                                                </a>
+                                            </li>
+                                            <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid hover:bg-[#1E1E1E] transition-all">
+                                                <a href="#" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px]">
+                                                    Community Engagement
                                                 </a>
                                             </li>
 
@@ -173,9 +188,11 @@
                                     </li>
 
                                     <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
-
-                                        <a href="/blogs" class="transition-all hover:text-secondary">Stories</a>
-
+                                        <a href="/news_and_update" class="transition-all hover:text-secondary">News and Events</a>
+                                    </li>
+                                    
+                                    <li class="mr-7 xl:mr-[40px] relative group py-[20px]">
+                                        <a href="/blogs" class="transition-all hover:text-secondary">Blogs</a>
                                     </li>
                                 </ul>
 
@@ -232,7 +249,7 @@
         {% endblock %}
 
         <!-- Footer Start -->
-        <footer class="footer bg-[#fff6fa] pt-[80px] lg:pt-[50px] pb-30 md:pb-[80px] lg:pb-[80px] font-normal bg-no-repeat" style="background-image: url('');">
+        <footer class="footer bg-[#fff6fa] px-4 pt-[80px] lg:pt-[50px] pb-30 md:pb-[80px] lg:pb-[80px] font-normal bg-no-repeat" style="background-image: url('');">
             <div class="container mx-auto">
                 <div class="grid grid-cols-12 gap-x-[30px] mb-[-30px]">
                     <div class="col-span-12 sm:col-span-6 lg:col-span-4 mb-[30px]">
@@ -243,30 +260,33 @@
                         <p class="text-sm hidden md:block">&copy; <a href="" class="text-secondary">Abby Cares Foundation.</a> All Rights Reserved - Privacy Policy</p>
                     </div>
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3 mb-[30px]">
-                        <h3 class="font-lora font-normal text-[22px] leading-[1.222] text-primary mb-[20px] lg:mb-[30px]">
-                            Information<span class="text-secondary">.</span></h3>
+                        <h3 class="font-lora text-[20px] leading-[1.222] text-primary mb-[20px] lg:mb-[30px]">
+                            Quick Links<span class="text-secondary">.</span></h3>
                         <ul class="text-[16px] leading-none mb-[-20px]">
-                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary" href="about.html">About us</a></li>
-                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary" href="#">Careers</a></li>
-                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary" href="#">Donation</a></li>
-                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary" href="blog-grid.html">Blog</a></li>
+                            <li class="mb-[20px]"><a class="inline-block hover:text-pink-600 hover:font-bold transition-all hover:text-secondary" href="#">About us</a></li>
+                            <li class="mb-[20px]"><a class="inline-block hover:text-pink-600 hover:font-bold transition-all hover:text-secondary" href="#">Projects</a></li>
+                            <li class="mb-[20px]"><a class="inline-block hover:text-pink-600 hover:font-bold transition-all hover:text-secondary" href="#">Get Involved</a></li>
+                            <li class="mb-[20px]"><a class="inline-block hover:text-pink-600 hover:font-bold transition-all hover:text-secondary" href="#">News and Events</a></li>
+                            <li class="mb-[20px]"><a class="inline-block hover:text-pink-600 hover:font-bold transition-all hover:text-secondary" href="#">Blog</a></li>
                         </ul>
                     </div>
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3 mb-[30px]">
-                        <h3 class="font-lora font-normal text-[22px] leading-[1.222] text-primary mb-[20px] lg:mb-[30px]">
+                        <h3 class="font-lora text-[20px] leading-[1.222] text-primary mb-[20px] lg:mb-[30px]">
                             Support<span class="text-secondary">.</span></h3>
                         <ul class="text-[16px] leading-none mb-[-20px]">
-                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary" href="#">Terms &
-                                    Conditions</a></li>
-                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary" href="#">Help line</a>
-                            </li>
-                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary" href="agent.html">Our Volunteers</a></li>
+                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary hover:text-pink-600 hover:font-bold" href="#">Donate</a></li>
+                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary hover:text-pink-600 hover:font-bold" href="agent.html">Volunteer</a></li>
+                            <li class="mb-[20px]"><a class="inline-block transition-all hover:text-secondary hover:text-pink-600 hover:font-bold" href="agent.html">Privacy Policy and Terms of Use</a></li>
                         </ul>
                     </div>
-                    <div class="col-span-12 sm:col-span-6 lg:col-span-2 mb-[30px]">
-                        <h3 class="font-lora font-normal text-[22px] leading-[1.222] text-primary mb-[20px] lg:mb-[30px]">
-                            Address<span class="text-secondary">.</span></h3>
-                        <p>No. 2 Old Market Road beside Access Bank. Off Ogoja Road.  Abakaliki Ebonyi State</p>
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-2 mb-[30px] text-xs">
+                        <h3 class="font-lora text-[20px] leading-[1.222] text-primary mb-[20px] lg:mb-[30px]">
+                            Contact Us<span class="text-secondary">.</span></h3>
+                        <p>Abby Cares Foundation</p>
+                        <p>No. 2 Old Market Road beside Access Bank. Off Ogoja Road</p>
+                        <p>Off Ogoja Road.  Abakaliki Ebonyi State</p>
+                        <p>Phone: 0810 904 2959. 0810 676 1886</p>
+                        <p>Email: service@abbycaresfoundation.org</p>
                         <ul class="inline-flex items-center justify-center mt-[20px]">
                             <li class="first:ml-0 ml-[15px]">
                                 <a href="https://www.facebook.com/share/YXgqhfciBdDs61px/?mibextid=qi2Omg" aria-label="svg" class="w-[26px] h-[26px] transition-all rounded-full bg-[#FE3D8E] flex items-center justify-center hover:drop-shadow-[0px_4px_10px_rgba(0,0,0,0.25)] text-white hover:bg-[#1E1E1E]">
