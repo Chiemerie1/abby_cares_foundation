@@ -131,26 +131,6 @@
 
                                         <a href="#" class="transition-all hover:text-secondary">Projects</a>
 
-                                        {% comment %} <ul class="list-none bg-white drop-shadow-[0px_6px_10px_rgba(0,0,0,0.2)] rounded-[12px] flex flex-wrap flex-col w-[220px] absolute top-[120%] left-1/2 -translate-x-1/2 transition-all
-                                            group-hover:top-[100%] invisible group-hover:visible opacity-0 group-hover:opacity-100"
-                                        >
-                                            <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                <a href="about.html" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-t-[12px]">Our Mission</a>
-                                            </li>
-
-                                            <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                <a href="about-v2.html" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-b-[12px]">leadership</a>
-                                            </li>
-
-                                            <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                <a href="about-v2.html" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-b-[12px]">Ways to Give</a>
-                                            </li>
-
-                                            <li class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all">
-                                                <a href="about-v2.html" class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-primary hover:text-white hover:bg-[#FE3D8E] text-center my-[-1px] rounded-b-[12px]">Careers</a>
-                                            </li>
-                                        </ul> {% endcomment %}
-
                                     </li>
 
                                     
@@ -218,24 +198,7 @@
                                     </div>
                                 </ul>
 
-                                <!-- mobile menu -->
-                                <div class="hidden mobile-menu">
-                                    <ul class="">
-                                        <li class="active"><a href="/" class="block text-sm px-2 py-4 text-white bg-[#FE3D8E] font-semibold">Home</a></li>
-                                        <li><a href="/about" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">About</a></li>
-                                        <li><a href="/blogs" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">Blog</a></li>
-                                        <li><a href="/news_and_update" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">News and updates</a></li>
-                                        <li><a href="/donate" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">Donate</a></li>
-                                    </ul>
-                                </div>
-                                <script>
-                                    const btn = document.querySelector("button.mobile-menu-button");
-                                    const menu = document.querySelector(".mobile-menu");
-
-                                    btn.addEventListener("click", () => {
-                                        menu.classList.toggle("hidden");
-                                    });
-                                </script>
+                                
 
                             </nav>
                         </div>
@@ -243,6 +206,24 @@
                 </div>
             </div>
         </header>
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu bg-[#1E1E1E] mt-16">
+            <ul class="text-white">
+                <li class="active"><a href="/" class="block text-sm px-2 py-4 text-white bg-[#FE3D8E] font-semibold">Home</a></li>
+                <li><a href="/about" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">About</a></li>
+                <li><a href="/blogs" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">Blog</a></li>
+                <li><a href="/news_and_update" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">News and updates</a></li>
+                <li><a href="/donate" class="block text-sm px-2 py-4 hover:bg-[#FE3D8E] hover:text-pink-50 transition duration-300">Donate</a></li>
+            </ul>
+        </div>
+        <script>
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
 
         
         {% block content %}
