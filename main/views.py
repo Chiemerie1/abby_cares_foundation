@@ -47,7 +47,6 @@ def blogs(request):
         request=request,
         template_name="main/blog.html",
         context={
-            "css_image_url": "/static/img/BG8_4820.jpg",
             "page_object": page_object,
             "blogs": blogs
         }
@@ -79,7 +78,6 @@ def news_and_update(request):
         request=request,
         template_name="main/news_and_update.html",
         context={
-            "css_image_url": "/static/img/BG8_4816.jpg",
             "page_object": page_object,
             "news_and_update": news_and_update,
         }
@@ -96,7 +94,7 @@ def news_and_update_details(request, id):
         context={
             "news_and_update": news_and_update,
         }
-        
+
     )
 
 
@@ -106,7 +104,6 @@ def about(request):
         request=request,
         template_name="main/about.html",
         context={
-            "css_image_url": "/static/img/BG8_4907.jpg",
         }
         
     )
@@ -190,8 +187,7 @@ def volunteers(request):
         request=request,
         template_name="main/volunteers.html",
         context={
-            "css_image_url": "/static/img/donate.jpg",
-                        "form": form
+                "form": form
 
         }
         
@@ -205,7 +201,19 @@ def focus_area(request):
         request=request,
         template_name="main/focus_area.html",
         context={
-            "css_image_url": "/static/img/donate.jpg",
         }
         
     )
+
+
+def community_engagements(request):
+
+    return render(
+        request=request,
+        template_name="main/community_engagements.html",
+        context={
+        }
+        
+    )
+
+

@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<section class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[50%]" style="background-image: url('{{ css_image_url }}');">
+<section class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[50%]" style="background-image: url('{% static '/img/BG8_4820.jpg' %}');">
     <div class="container mx-auto">
         <div class="grid grid-cols-12">
             <div class="col-span-12">
@@ -52,44 +52,43 @@
             <div class="col-span-12">
                 <ul class="pagination flex flex-wrap items-center justify-center">
 
-                    <li class="mx-2">
-                        <a class="flex flex-wrap items-center justify-center  w-[26px] h-[26px] bg-primary rounded-full text-orange leading-none transition-all hover:bg-secondary text-white text-[12px]" href="#">
-                            <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(.clip0_876_580)">
-                                    <path d="M5.8853 10.0592C5.7326 10.212 5.48474 10.212 5.33204 10.0592L0.636322 5.36134C0.48362 5.20856 0.48362 4.96059 0.636322 4.80782L5.33204 0.109909C5.48749 -0.0403413 5.73535 -0.0359829 5.8853 0.119544C6.03181 0.271171 6.03181 0.511801 5.8853 0.663428L1.46633 5.08446L5.8853 9.50573C6.03823 9.65873 6.03823 9.90648 5.8853 10.0592Z" fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath class="clip0_876_580">
-                                        <rect width="5.47826" height="10.1739" fill="white" transform="matrix(-1 0 0 1 6 0)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </a>
-                    </li>
+                    
 
-                    <li class="mx-2">
-                        <a class="flex flex-wrap items-center justify-center  w-[26px] h-[26px] leading-none hover:text-secondary" href="#">1</a>
-                    </li>
+                    <!--Pagination start-->
+                    <div
+                        class="mt-10 grid px-4 py-3 my-5 text-xs font-semibold tracking-wide text-gray-500 border-t border-gray-700 sm:grid-cols-9 dark:text-gray-400 bg-gray-800"
+                    >
+                        <span class="flex items-center col-span-3">
+                        <span class="current">
+                            Showing page {{ page_object.number }} of {{ page_object.paginator.num_pages }} pages
+                        </span>
+                        </span>
+                        <span class="col-span-2"></span>
+                        <!-- Pagination -->
+                        <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+                            <nav aria-label="Table navigation">
+                                <ul class="inline-flex items-center text-white">
 
-                    <li class="mx-2">
-                        <a class="flex flex-wrap items-center justify-center  w-[26px] h-[26px] leading-none hover:text-secondary" href="#">2</a>
-                    </li>
+                                    <li class="">
+                                        {% if page_object.has_previous %}
+                                        <li class="px-5 border border-gray-500"><a href="?page=1">&laquo; first</a></li>
+                                        <li class="px-5 border border-gray-500"><a href="?page={{ page_object.previous_page_number }}">previous</a></li>
+                                        {% endif %}
+                                    </li>
 
-                    <li class="mx-2">
-                        <a class="flex flex-wrap items-center justify-center  w-[26px] h-[26px] leading-none hover:text-secondary" href="#">3</a>
-                    </li>
+                                    <li>
+                                        {% if page_object.has_next %}
+                                        <li class="px-5 border border-gray-500"><a href="?page={{ page_object.next_page_number }}">next</a></li>
+                                        <li class="px-5 border border-gray-500"><a href="?page={{ page_object.paginator.num_pages }}">last &raquo;</a></li>
+                                        {% endif %}
+                                    </li>
 
-                    <li class="mx-2">
-                        <a class="flex flex-wrap items-center justify-center  w-[26px] h-[26px] leading-none hover:text-secondary" href="#">4</a>
-                    </li>
-
-                    <li class="mx-2">
-                        <span>---</span>
-                    </li>
-
-                    <li class="mx-2">
-                        <a class="flex flex-wrap items-center justify-center  w-[26px] h-[26px] leading-none hover:text-secondary" href="#">25</a>
-                    </li>
+                                </ul>
+                            </nav>
+                        </span>
+                        <!--pagination end-->
+                    </div>
+                    <!--Pagination end-->
 
                     <li class="mx-2">
                         <a class="flex flex-wrap items-center justify-center  w-[26px] h-[26px] bg-primary rounded-full text-orange leading-none transition-all hover:bg-secondary text-white text-[12px]" href="#">

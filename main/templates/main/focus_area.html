@@ -6,7 +6,7 @@
 
 
 
-<section class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[40%]" style="background-image: url('{{ css_image_url }}');">
+<section class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[40%]" style="background-image: url('{% static '/img/BG8_4820.jpg' %}');">
     <div class="container mx-auto">
         <div class="grid grid-cols-12">
             <div class="col-span-12">
@@ -49,9 +49,9 @@
 
                     <div class="drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] rounded-[0px_0px_6px_6px] px-[15px] py-[20px] border-b-[6px] bg-primary transition-all duration-700 border-secondary">
                         <h3 class="font-lora font-normal text-[28px] text-[#1E1E1E]">Abby Cares</h3>
-                        <p class="font-normal invisible sm:visible text-[18px] leading-none capitalize mb-[5px] text-[#1E1E1E]">
+                        {% comment %} <p class="font-normal invisible sm:visible text-[18px] leading-none capitalize mb-[5px] text-[#1E1E1E]">
                             +234 810 676 1886
-                        </p>
+                        </p> {% endcomment %}
 
                         
                         <ul class="inline-flex items-center justify-center absolute w-full top-[-30px] left-0">
@@ -113,43 +113,20 @@
                             Prescribed medications are given at a discounted rate or FREE at the PHC through the foundation.
                             Referrals to the secondary/tertiary medical institutions are prompt with assigned case managers for follow-up/checkup at the PHC.
                         </p>
-                        {% comment %} <span class="font-lora font-normal block text-secondary text-[18px] mt-[10px]">
-                            Phone no. </span>
-                        <a href="tel:+9985254784" class="font-lora font-medium text-primary text-[28px]">+9985 254 784</a> {% endcomment %}
-                    </div>
-                    <div class="mb-[30px]">
+                        
                         <h3 class="font-lora font-medium text-[24px] text-primary mb-[10px]">Maternal and Child Health Service<span class="text-secondary">.</span></h3>
                         <p>To improve access to quality healthcare services for pregnant women and improved pregnancy outcomes,
                             the foundation assists in financing the cost of registered antenatal patients requiring pregnancy
                             ultrasound by subsidizing 50% of the cost including transportation to and from the PHC.
                             Pregnant women also receive FREE medical consults and treatments through the Family Physician and Gynecologist.
                         </p>
-                        {% comment %} <span class="font-lora font-normal block text-secondary text-[18px] mt-[10px]">
-                            Phone no. </span>
-                        <a href="tel:+9985254784" class="font-lora font-medium text-primary text-[28px]">+9985 254 784</a> {% endcomment %}
+                        
                     </div>
                 </div>
 
             </div>
 
             <div class="col-span-12 lg:col-span-3 mb-[30px]">
-                {% comment %} <ul class="flex flex-wrap lg:flex-col list-none items-center justify-around lg:justify-between bg-[#F5F9F8] rounded-[8px] h-full text-center py-[30px] lg:py-[65px] xl:max-w-[230px]">
-                    <li class="block">
-                        <span class="font-lora text-secondary text-lg"><span class="counter-up">1</span>
-                        <span>k+</span></span>
-                        <p>Patients</p>
-                    </li>
-                    <li class="block">
-                        <span class="font-lora text-secondary text-lg"><span class="counter-up">10</span>
-                        <span>k+</span></span>
-                        <p>Comunities</p>
-                    </li>
-                    <li class="block">
-                        <span class="font-lora text-secondary text-lg"><span class="counter-up">1</span>
-                        <span></span></span>
-                        <p>Recognition</p>
-                    </li>
-                </ul> {% endcomment %}
             </div>
         </div>
     </div>

@@ -26,6 +26,7 @@ urlpatterns = [
     path("donate/", views.donate , name="donate"),
     path("volunteers/", views.volunteers , name="volunteers"),
     path("focus_area/", views.focus_area , name="focus_area"),
+    path("community_engagements/", views.community_engagements , name="community_engagements"),
 
 ]
 

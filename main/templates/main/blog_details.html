@@ -4,16 +4,7 @@
 
 {% block content %}
 
-{% comment %} {{ blog.title }}
-{{ blog.created_at }}
-{{ blog.writers_name }}
-<img src"{{ blog.image.url }}" />
-<div class="relative">
-    <a href="properties-details.html" class="block">
-        <img src="{{ blog.image.url }}" class="w-full h-full" loading="lazy" width="370" height="266" alt="">
-    </a>
-</div>
-{{ blog.paragraph | safe }} {% endcomment %}
+
 
 <main class=" mt-12 pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased">
     <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
@@ -35,10 +26,9 @@
             <figure><img src="{{ blog.image.url }}" alt="">
                 <figcaption>{{ blog.image_caption }}</figcaption>
             </figure><br>
-            {% comment %} <h2>Getting started with Flowbite</h2> {% endcomment %}
-            <p>
-                {{ blog.paragraph | safe }}
-            </p>            
+            
+                <p>{{ blog.paragraph | safe }}</p>
+                    
         </article>
     </div>
   </main>
