@@ -127,7 +127,7 @@ def donate(request):
         request=request,
         template_name="main/donate.html",
         context={
-            
+             "css_image_url": "/static/img/donate.jpg",
         }
         
     )
